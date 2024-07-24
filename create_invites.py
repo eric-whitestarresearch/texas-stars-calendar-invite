@@ -59,7 +59,9 @@ def get_attendees():
         none
 
     Return:
-        list: A list of dictonaries. The dictonary has the key email
+        list: A list of dictonaries. 
+            Dictonary schema:
+                email (String): The emaill address of the invitee
     """
     
     attendees_list = open('attendees.txt','r')
@@ -76,15 +78,16 @@ def build_game_invite(game, attendees):
 
     Parameters:
         game (Dict): A dictonary with the game info. 
-            It has the keys: 
-                date: The date time of the start of the game, 
-                location: Home or Away,
-                playing: The name of the team we are playing
-        attendees (List): A list of dictonaries of the people to invite. The ditonary has the keys:
-            email: The email address to invite
+            It has the schema: 
+                date (String): The date time of the start of the game in the format YYYY/MM/DD HH:MM, 
+                location(String): Home or Away,
+                playing(String): The name of the team we are playing
+        attendees (List): A list of dictonaries of the people to invite. 
+            The dictonary has the schemas:
+                email: The email address to invite
 
     Returns:
-        dict: A dictonary with the scheme expected by the GCP calandar API
+        dict: A dictonary with the schema expected by the GCP calandar API
 
     """
 

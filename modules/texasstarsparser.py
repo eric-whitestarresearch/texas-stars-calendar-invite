@@ -38,8 +38,8 @@ class TexasStarsParser:
         """
 
         #On the website it does not provide the year of the game. Since the game season spans two years we need to account for this. 
-        #If we run this script between July and December assume the season hasn't started yer
-        #If we run this script between Janurary and June assume we are in the second half of the seasons already
+        #If we run this script between July and December assume the season hasn't started yet
+        #If we run this script between Janurary and June assume we are in the second half of the season already
         if datetime.datetime.now().date().month > 6:
             self.this_year = str(datetime.date.today().year)
             self.next_year = str((datetime.date.today() + datetime.timedelta(days=366)).year)
@@ -58,7 +58,7 @@ class TexasStarsParser:
 
         Returns:
             List: A list of dictonaries with the game data. 
-                The dictonary has the following keys:
+                The dictonary has the following schema:
                     date: The date and time of the game in format YYYY/MM/DD HH:MM
                     location: Home or Away
                     playing: The name of the team we are playing
